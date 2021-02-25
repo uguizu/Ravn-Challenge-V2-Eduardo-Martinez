@@ -13,19 +13,20 @@ struct PeopleDetailView: View {
             VStack(alignment: .leading) {
                 PeopleDetailHeader(title: "General Information")
                 
-                PeopleDetailCell(title: "Eye Color", value: "Brown")
+                PeopleDetailCell(label: "Eye Color", value: "Brown")
                     .frame(height: 49)
-                PeopleDetailCell(title: "Hair Color", value: "Brown")
+                PeopleDetailCell(label: "Hair Color", value: "Brown")
                     .frame(height: 49)
-                PeopleDetailCell(title: "Skin Color", value: "Brown")
+                PeopleDetailCell(label: "Skin Color", value: "Brown")
                     .frame(height: 49)
-                PeopleDetailCell(title: "Birth Year", value: "19BBY")
+                PeopleDetailCell(label: "Birth Year", value: "19BBY")
                     .frame(height: 49)
                 
                 PeopleDetailHeader(title: "Vehicles")
-                PeopleDetailCell(title: "Snowspeeder", value: "")
+                
+                PeopleVehicleCell(value: "Snowspeeder")
                     .frame(height: 49)
-                PeopleDetailCell(title: "Imperial Speeder Bike", value: "")
+                PeopleVehicleCell(value: "Snowspeeder")
                     .frame(height: 49)
                 
             }
@@ -34,13 +35,10 @@ struct PeopleDetailView: View {
 }
 
 struct PeopleDetailHeader: View {
-    
     let title: String
     
     var body: some View {
-        Text(title)
-            .font(.system(size: 17, weight: .bold))
-            .foregroundColor(.textDark)
+        HeaderTextView(type: .regular, value: title)
             .padding(.top, 32)
             .padding(.bottom, 8)
             .padding(.horizontal, 16)
@@ -48,26 +46,37 @@ struct PeopleDetailHeader: View {
 }
 
 struct PeopleDetailCell: View {
-    
-    let title: String
+    let label: String
     let value: String
     
     var body: some View {
         VStack {
             HStack {
-                Text(title)
-                    .font(.system(size: 17, weight: .bold))
-                    .foregroundColor(.textLight)
+                HeaderTextView(type: .lowEmphasis, value: label)
                 
-                Spacer()
+                Spacer(minLength: 16)
                 
-                Text(value)
-                    .font(.system(size: 17, weight: .bold))
-                    .foregroundColor(.textDark)
+                HeaderTextView(type: .regular, value: value)
             }
             .padding(.top, 14)
             .padding(.bottom, 15)
             .padding(.horizontal, 16)
+            
+            Divider()
+                .padding(.leading, 16)
+        }
+    }
+}
+
+struct PeopleVehicleCell: View {
+    let value: String
+    
+    var body: some View {
+        VStack(alignment: .leading) {
+            HeaderTextView(type: .lowEmphasis, value: value)
+                .padding(.top, 14)
+                .padding(.bottom, 15)
+                .padding(.horizontal, 16)
             
             Divider()
                 .padding(.leading, 16)

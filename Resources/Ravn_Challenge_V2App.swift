@@ -13,7 +13,7 @@ struct Ravn_Challenge_V2App: App {
     init() {
         let coloredAppearance = UINavigationBarAppearance()
         coloredAppearance.configureWithOpaqueBackground()
-        coloredAppearance.backgroundColor = .black
+        coloredAppearance.backgroundColor = .ravnBlack
         coloredAppearance.titleTextAttributes = [.foregroundColor: UIColor.white]
         coloredAppearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
         

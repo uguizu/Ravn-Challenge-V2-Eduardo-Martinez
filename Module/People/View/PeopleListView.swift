@@ -13,7 +13,7 @@ struct PeopleListView: View {
         NavigationView {
             ScrollView {
                 LazyVStack {
-                    ForEach(0...10, id: \.self) { _ in
+                    ForEach(0...2, id: \.self) { _ in
                         PeopleCell()
                             .frame(height: 69)
                     }
@@ -31,13 +31,8 @@ struct PeopleCell: View {
         VStack {
             HStack {
                 VStack(alignment: .leading ,spacing: 0) {
-                    Text("Luke Skywalker")
-                        .font(.system(size: 17, weight: .bold))
-                        .foregroundColor(.textDark)
-                    
-                    Text("Human from Tatooine")
-                        .font(.system(size: 14, weight: .regular))
-                        .foregroundColor(.textLight)
+                    HeaderTextView(type: .regular, value: "Luke Skywalker")
+                    ParagraphTextView(type: .lowEmphasis, value: "Human from Tatooine")
                 }
                 .padding(.leading, 16)
                 
