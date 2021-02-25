@@ -19,9 +19,6 @@ struct PeopleListView: View {
                         PeopleCell(name: people.name, homeworld: people.homeworld)
                             .frame(height: 69)
                             .transition(.move(edge: .top))
-                            .onTapGesture {
-                                
-                            }
                     }
                     
                     if viewModel.hasNextPage && !viewModel.error {
