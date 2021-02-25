@@ -18,14 +18,29 @@ struct PeopleListView: View {
                     ForEach(viewModel.peopleList) { people in
                         PeopleCell(name: people.name, homeworld: people.homeworld)
                             .frame(height: 69)
-                    }
-                    Text("Loading ...")
-                        .onAppear {
-                            if viewModel.hasNextPage {
-                                viewModel.requestNextPage.send(())
+                            .transition(.move(edge: .top))
+                            .onTapGesture {
+                                
                             }
-                        }
+                    }
+                    
+                    if viewModel.hasNextPage && !viewModel.error {
+                        LoadingView()
+                            .padding(.top, 16)
+                            .onAppear {
+                                if viewModel.hasNextPage {
+                                    viewModel.requestNextPage.send(())
+                                }
+                            }
+                    }
+                    
+                    if viewModel.error {
+                        HeaderTextView(type: .highEmphasis, value: "Failed to Load Data")
+                            .padding(.top, 16)
+                    }
                 }
+                .animation(.default)
+                
             }
             .navigationTitle("People of Star Wars")
             .navigationBarTitleDisplayMode(.inline)

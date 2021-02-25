@@ -16,6 +16,7 @@ query AllPeople($after: String) {
       }
       vehicleConnection(first: 10) {
         vehicles {
+          id
           name
         }
       }

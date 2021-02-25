@@ -32,6 +32,7 @@ public final class AllPeopleQuery: GraphQLQuery {
             __typename
             vehicles {
               __typename
+              id
               name
             }
           }
@@ -395,6 +396,7 @@ public final class AllPeopleQuery: GraphQLQuery {
             public static var selections: [GraphQLSelection] {
               return [
                 GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+                GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
                 GraphQLField("name", type: .scalar(String.self)),
               ]
             }
@@ -405,8 +407,8 @@ public final class AllPeopleQuery: GraphQLQuery {
               self.resultMap = unsafeResultMap
             }
 
-            public init(name: String? = nil) {
-              self.init(unsafeResultMap: ["__typename": "Vehicle", "name": name])
+            public init(id: GraphQLID, name: String? = nil) {
+              self.init(unsafeResultMap: ["__typename": "Vehicle", "id": id, "name": name])
             }
 
             public var __typename: String {
@@ -415,6 +417,16 @@ public final class AllPeopleQuery: GraphQLQuery {
               }
               set {
                 resultMap.updateValue(newValue, forKey: "__typename")
+              }
+            }
+
+            /// The ID of an object
+            public var id: GraphQLID {
+              get {
+                return resultMap["id"]! as! GraphQLID
+              }
+              set {
+                resultMap.updateValue(newValue, forKey: "id")
               }
             }
 

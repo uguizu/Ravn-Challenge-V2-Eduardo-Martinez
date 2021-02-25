@@ -5,6 +5,7 @@
 //  Created by emartinez on 2/24/21.
 //
 
+import Foundation
 import Combine
 import CombineExt
 
@@ -35,6 +36,7 @@ class PeopleListViewModel: ObservableObject {
     
     private func setupBindings() {
         let resultList = requestNextPage
+            .delay(for: .seconds(1), scheduler: RunLoop.main, options: .none)
             .withLatestFrom($pageInformation)
             .map { $0?.endCursor }
             .handleReceiveValue { [weak self] _ in self?.loading = true }
