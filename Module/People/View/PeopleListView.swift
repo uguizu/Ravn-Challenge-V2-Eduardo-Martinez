@@ -32,14 +32,14 @@ struct PeopleListView: View {
                     }
                     
                     if viewModel.error {
-                        HeaderTextView(type: .highEmphasis, value: "Failed to Load Data")
+                        HeaderTextView(type: .highEmphasis, value: Translations.peopleListErrorText)
                             .padding(.top, 16)
                     }
                 }
                 .animation(.default)
                 
             }
-            .navigationTitle("People of Star Wars")
+            .navigationBarTitle(Translations.peopleListTitleText )
             .navigationBarTitleDisplayMode(.inline)
         }
     }
@@ -79,5 +79,6 @@ struct PeopleCell: View {
 struct PeopleListView_Previews: PreviewProvider {
     static var previews: some View {
         PeopleListView()
+            .environment(\.locale, Locale(identifier: "en"))
     }
 }

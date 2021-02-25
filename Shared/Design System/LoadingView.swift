@@ -12,7 +12,7 @@ struct LoadingView: View {
         HStack(spacing: 8) {
             ProgressView()
                 .frame(width: 24, height: 24, alignment: .center)
-            HeaderTextView(type: .lowEmphasis, value: "Loading")
+            HeaderTextView(type: .lowEmphasis, value: Translations.loadingText)
         }
     }
 }
