@@ -15,19 +15,15 @@ protocol PeopleNetworkServiceType {
 
 struct PeopleNetworkService: PeopleNetworkServiceType {
     
-    private let apolloClient = Network.shared.apollo
+    let networkClient: NetworkClientType
+    
+    init(networkClient: NetworkClientType = NetworkClient()) {
+        self.networkClient = networkClient
+    }
     
     func fetchPeopleList(after: String) -> AnyPublisher<AllPeopleQuery.Data.AllPerson?, Error> {
-        Future { promise in
-            apolloClient.fetch(query: AllPeopleQuery(after: after)) { result in
-                switch result {
-                case .success(let value):
-                    promise(.success(value.data?.allPeople))
-                case .failure(let error):
-                    promise(.failure(error))
-                }
-            }
-        }
-        .eraseToAnyPublisher()
+        networkClient.fetch(query: AllPeopleQuery(after: after))
+            .map { $0?.allPeople }
+            .eraseToAnyPublisher()
     }
 }
