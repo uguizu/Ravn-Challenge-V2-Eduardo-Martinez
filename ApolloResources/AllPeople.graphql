@@ -1,0 +1,24 @@
+query AllPeople($after: String) {
+  allPeople(first: 5, after: $after) {
+    pageInfo {
+      hasNextPage
+      endCursor
+    }
+    people {
+      id
+      name
+      eyeColor
+      hairColor
+      skinColor
+      birthYear
+      homeworld {
+        name
+      }
+      vehicleConnection(first: 10) {
+        vehicles {
+          name
+        }
+      }
+    }
+  }
+}

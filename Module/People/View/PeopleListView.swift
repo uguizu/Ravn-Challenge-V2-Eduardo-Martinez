@@ -9,14 +9,22 @@ import SwiftUI
 
 struct PeopleListView: View {
     
+    @StateObject var viewModel = PeopleListViewModel()
+    
     var body: some View {
         NavigationView {
             ScrollView {
                 LazyVStack {
-                    ForEach(0...2, id: \.self) { _ in
-                        PeopleCell()
+                    ForEach(viewModel.peopleList) { people in
+                        PeopleCell(name: people.name, homeworld: people.homeworld)
                             .frame(height: 69)
                     }
+                    Text("Loading ...")
+                        .onAppear {
+                            if viewModel.hasNextPage {
+                                viewModel.requestNextPage.send(())
+                            }
+                        }
                 }
             }
             .navigationTitle("People of Star Wars")
@@ -27,12 +35,15 @@ struct PeopleListView: View {
 
 struct PeopleCell: View {
     
+    let name: String
+    let homeworld: String
+    
     var body: some View {
         VStack {
             HStack {
                 VStack(alignment: .leading ,spacing: 0) {
-                    HeaderTextView(type: .regular, value: "Luke Skywalker")
-                    ParagraphTextView(type: .lowEmphasis, value: "Human from Tatooine")
+                    HeaderTextView(type: .regular, value: name)
+                    ParagraphTextView(type: .lowEmphasis, value: homeworld)
                 }
                 .padding(.leading, 16)
                 
