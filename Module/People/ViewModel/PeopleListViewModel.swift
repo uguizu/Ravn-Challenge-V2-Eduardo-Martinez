@@ -10,22 +10,23 @@ import Combine
 import CombineExt
 
 class PeopleListViewModel: ObservableObject {
-    // Binding
+    // MARK: Binding
     @Published var loading = false
     @Published var peopleList: [People] = []
     @Published var pageInformation: PageInformation?
+    @Published var error: Bool = false
     
-    // Input
+    // MARK: Input
     let requestNextPage = PassthroughSubject<Void, Never>()
     
-    // Output
+    // MARK: Output
     let result = PassthroughSubject<Void, Error>()
-    @Published var error: Bool = false
     var hasNextPage: Bool {
         loading == false
             && ((peopleList.isEmpty && pageInformation == nil) || pageInformation?.hasNextPage == true)
     }
     
+    // MARK: Internal Variables
     private var cancellables = Set<AnyCancellable>()
     private let service: PeopleServiceType
     
@@ -34,8 +35,10 @@ class PeopleListViewModel: ObservableObject {
         setupBindings()
     }
     
+    // MARK: Private functions
     private func setupBindings() {
         let resultList = requestNextPage
+            .filter { [weak self] in self?.hasNextPage == true }
             .delay(for: .seconds(1), scheduler: RunLoop.main, options: .none)
             .withLatestFrom($pageInformation)
             .map { $0?.cursor }

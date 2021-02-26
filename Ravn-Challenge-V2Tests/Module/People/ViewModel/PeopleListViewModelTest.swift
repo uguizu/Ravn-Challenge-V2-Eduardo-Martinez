@@ -12,27 +12,68 @@ import Combine
 class PeopleListViewModelTest: XCTestCase {
     
     var viewModel: PeopleListViewModel?
-    var cancellables: Set<AnyCancellable>?
-    
-    override func setUpWithError() throws {
-        viewModel = .init()
-        cancellables = []
-    }
 
     override func tearDownWithError() throws {
         viewModel = nil
-        cancellables = nil
     }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    
+    func testRequestDataSuccess() throws {
+        // Given
+        viewModel = .init(service: PeopleServiceMock(errorFlag: false, shouldShowNextPage: false))
+        
+        // When
+        viewModel?.requestNextPage.send(())
+        _ = XCTWaiter.wait(for: [XCTestExpectation()], timeout: 1.2)
+        
+        // Then
+        XCTAssertEqual(viewModel?.peopleList.count, 5)
+        XCTAssertFalse(viewModel?.error ?? true)
     }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    
+    func testRequestDataError() throws {
+        // Given
+        viewModel = .init(service: PeopleServiceMock(errorFlag: true, shouldShowNextPage: false))
+        
+        // When
+        viewModel?.requestNextPage.send(())
+        _ = XCTWaiter.wait(for: [XCTestExpectation()], timeout: 1.2)
+        
+        // Then
+        XCTAssertTrue(viewModel?.error ?? true)
+    }
+    
+    func testRequestPagination() throws {
+        // Given
+        viewModel = .init(service: PeopleServiceMock(errorFlag: false, shouldShowNextPage: true))
+        
+        // When
+        viewModel?.requestNextPage.send(())
+        _ = XCTWaiter.wait(for: [XCTestExpectation()], timeout: 2)
+        viewModel?.requestNextPage.send(())
+        _ = XCTWaiter.wait(for: [XCTestExpectation()], timeout: 2)
+        viewModel?.requestNextPage.send(())
+        _ = XCTWaiter.wait(for: [XCTestExpectation()], timeout: 2)
+        
+        
+        // Then
+        XCTAssertEqual(viewModel?.peopleList.count, 15)
+        XCTAssertFalse(viewModel?.error ?? true)
+    }
+    
+    func testRequestNoNextPage() throws {
+        // Given
+        viewModel = .init(service: PeopleServiceMock(errorFlag: false, shouldShowNextPage: false))
+        
+        // When
+        viewModel?.requestNextPage.send(())
+        _ = XCTWaiter.wait(for: [XCTestExpectation()], timeout: 2)
+        viewModel?.requestNextPage.send(())
+        _ = XCTWaiter.wait(for: [XCTestExpectation()], timeout: 2)
+        viewModel?.requestNextPage.send(())
+        _ = XCTWaiter.wait(for: [XCTestExpectation()], timeout: 2)
+        
+        // Then
+        XCTAssertEqual(viewModel?.peopleList.count, 5)
+        XCTAssertFalse(viewModel?.error ?? true)
     }
 }
