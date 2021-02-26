@@ -11,7 +11,7 @@ import Apollo
 
 class Network {
     static let shared = Network()
-    private(set) lazy var apolloClient = ApolloClient(url: URL(string: "https://swapi-graphql.netlify.app/.netlify/functions/index")!)
+    let apolloClient = ApolloClient(url: NetworkConfiguration.baseURL)
 }
 
 protocol NetworkClientType {
