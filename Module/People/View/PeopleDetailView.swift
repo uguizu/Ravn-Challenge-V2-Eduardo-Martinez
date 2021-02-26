@@ -14,22 +14,28 @@ struct PeopleDetailView: View {
     var body: some View {
         ScrollView {
             VStack(alignment: .leading) {
-                PeopleDetailHeader(title: "General Information")
+                PeopleDetailHeader(title: Translations.peopleDetailGeneralInformationHeaderText)
                 
-                PeopleDetailCell(label: "Eye Color", value: people.eyeColor)
+                PeopleDetailCell(label: Translations.peopleDetailGeneralInformationEyeColorText,
+                                 value: people.eyeColor)
                     .frame(height: 49)
-                PeopleDetailCell(label: "Hair Color", value: people.hairColor)
+                PeopleDetailCell(label: Translations.peopleDetailGeneralInformationHairColorText,
+                                 value: people.hairColor)
                     .frame(height: 49)
-                PeopleDetailCell(label: "Skin Color", value: people.skinColor)
+                PeopleDetailCell(label: Translations.peopleDetailGeneralInformationSkinColorText,
+                                 value: people.skinColor)
                     .frame(height: 49)
-                PeopleDetailCell(label: "Birth Year", value: people.birthYear)
+                PeopleDetailCell(label: Translations.peopleDetailGeneralInformationBirthYearText,
+                                 value: people.birthYear)
                     .frame(height: 49)
                 
-                PeopleDetailHeader(title: "Vehicles")
-                
-                ForEach(people.vehicles) {
-                    PeopleVehicleCell(value: $0.name)
-                        .frame(height: 49)
+                if !people.vehicles.isEmpty {
+                    PeopleDetailHeader(title: Translations.peopleDetailVehicleHeaderText)
+                    
+                    ForEach(people.vehicles) {
+                        PeopleVehicleCell(value: $0.name)
+                            .frame(height: 49)
+                    }
                 }
             }
         }
