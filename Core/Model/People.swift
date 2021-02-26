@@ -21,4 +21,26 @@ struct People: Identifiable {
     var homeworld: String {
         wrappedValue.homeworld?.name ?? ""
     }
+    
+    var eyeColor: String {
+        wrappedValue.eyeColor ?? ""
+    }
+    
+    var hairColor: String {
+        wrappedValue.hairColor ?? ""
+    }
+    
+    var skinColor: String {
+        wrappedValue.skinColor ?? ""
+    }
+    
+    var birthYear: String {
+        wrappedValue.birthYear ?? ""
+    }
+    
+    var vehicles: [Vehicle] {
+        wrappedValue.vehicleConnection?.vehicles?
+            .compactMap { $0 }
+            .map { Vehicle(wrappedValue: $0) } ?? []       
+    }
 }

@@ -10,6 +10,13 @@
 "loading.text" = "Loading";
 
 // People List View
-
 "people.list.title.text" = "People of Star Wars";
 "people.list.error.text" = "Failed to Load Data";
+
+// People Detail View
+"people.detail.general.information.header.text" = "General Information";
+"people.detail.general.information.eyeColor.text" = "Eye Color";
+"people.detail.general.information.hairColor.text" = "Hair Color";
+"people.detail.general.information.skinColor.text" = "Skin Color";
+"people.detail.general.information.birthYear.text" = "Birth Year";
+"people.detail.vehicle.header.text" = "Vehicles";

@@ -16,9 +16,11 @@ struct PeopleListView: View {
             ScrollView {
                 LazyVStack {
                     ForEach(viewModel.peopleList) { people in
-                        PeopleCell(name: people.name, homeworld: people.homeworld)
-                            .frame(height: 69)
-                            .transition(.move(edge: .top))
+                        NavigationLink(destination: PeopleDetailView(people: people)) {
+                            PeopleCell(name: people.name, homeworld: people.homeworld)
+                                .frame(height: 69)
+                                .transition(.move(edge: .top))
+                        }
                     }
                     
                     if viewModel.hasNextPage && !viewModel.error {

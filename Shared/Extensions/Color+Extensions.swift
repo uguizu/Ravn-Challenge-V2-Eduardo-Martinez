@@ -8,6 +8,7 @@
 import SwiftUI
 
 extension Color {
+    static let adaptativeWhite = Color("adaptativeWhite")
     static let ravnBlack = Color("ravnBlack")
     static let textDark = Color("textDark")
     static let textLight = Color("textLight")
@@ -16,6 +17,7 @@ extension Color {
 
 // Added just in case I need to use some kind of UIColor
 extension UIColor {
+    static let adaptativeWhite = UIColor(named: "adaptativeWhite")
     static let ravnBlack = UIColor(named: "ravnBlack")
     static let textDark = UIColor(named: "textDark")
     static let textLight = UIColor(named: "textLight")
