@@ -31,3 +31,5 @@ All the dependencies are managed using Swift Package Manager
 - Run the application (use a simulator or device)
 
 ## Screenshots
+
+![alt-text](demo.gif)
