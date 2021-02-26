@@ -8,29 +8,32 @@
 import SwiftUI
 
 struct PeopleDetailView: View {
+    
+    let people: People
+    
     var body: some View {
         ScrollView {
             VStack(alignment: .leading) {
                 PeopleDetailHeader(title: "General Information")
                 
-                PeopleDetailCell(label: "Eye Color", value: "Brown")
+                PeopleDetailCell(label: "Eye Color", value: people.eyeColor)
                     .frame(height: 49)
-                PeopleDetailCell(label: "Hair Color", value: "Brown")
+                PeopleDetailCell(label: "Hair Color", value: people.hairColor)
                     .frame(height: 49)
-                PeopleDetailCell(label: "Skin Color", value: "Brown")
+                PeopleDetailCell(label: "Skin Color", value: people.skinColor)
                     .frame(height: 49)
-                PeopleDetailCell(label: "Birth Year", value: "19BBY")
+                PeopleDetailCell(label: "Birth Year", value: people.birthYear)
                     .frame(height: 49)
                 
                 PeopleDetailHeader(title: "Vehicles")
                 
-                PeopleVehicleCell(value: "Snowspeeder")
-                    .frame(height: 49)
-                PeopleVehicleCell(value: "Snowspeeder")
-                    .frame(height: 49)
-                
+                ForEach(people.vehicles) {
+                    PeopleVehicleCell(value: $0.name)
+                        .frame(height: 49)
+                }
             }
         }
+        .navigationTitle(people.name)
     }
 }
 
@@ -86,6 +89,6 @@ struct PeopleVehicleCell: View {
 
 struct PeopleDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        PeopleDetailView()
+        PeopleDetailView(people: .init(wrappedValue: .init(id: "")))
     }
 }
