@@ -30,6 +30,6 @@ All the dependencies are managed using Swift Package Manager
 - Build the application inside Xcode
 - Run the application (use a simulator or device)
 
-## Screenshots
+## Demo of Application
 
 ![alt-text](demo.gif)
