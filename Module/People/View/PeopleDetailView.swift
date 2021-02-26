@@ -16,18 +16,10 @@ struct PeopleDetailView: View {
             VStack(alignment: .leading) {
                 PeopleDetailHeader(title: Translations.peopleDetailGeneralInformationHeaderText)
                 
-                PeopleDetailCell(label: Translations.peopleDetailGeneralInformationEyeColorText,
-                                 value: people.eyeColor)
-                    .frame(height: 49)
-                PeopleDetailCell(label: Translations.peopleDetailGeneralInformationHairColorText,
-                                 value: people.hairColor)
-                    .frame(height: 49)
-                PeopleDetailCell(label: Translations.peopleDetailGeneralInformationSkinColorText,
-                                 value: people.skinColor)
-                    .frame(height: 49)
-                PeopleDetailCell(label: Translations.peopleDetailGeneralInformationBirthYearText,
-                                 value: people.birthYear)
-                    .frame(height: 49)
+                PeopleDetailCell(label: Translations.peopleDetailGeneralInformationEyeColorText, value: people.eyeColor)
+                PeopleDetailCell(label: Translations.peopleDetailGeneralInformationHairColorText, value: people.hairColor)
+                PeopleDetailCell(label: Translations.peopleDetailGeneralInformationSkinColorText, value: people.skinColor)
+                PeopleDetailCell(label: Translations.peopleDetailGeneralInformationBirthYearText, value: people.birthYear)
                 
                 if !people.vehicles.isEmpty {
                     PeopleDetailHeader(title: Translations.peopleDetailVehicleHeaderText)
@@ -74,6 +66,7 @@ struct PeopleDetailCell: View {
             Divider()
                 .padding(.leading, 16)
         }
+        .frame(height: 49)
     }
 }
 
