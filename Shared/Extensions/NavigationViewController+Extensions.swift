@@ -7,12 +7,13 @@
 
 import SwiftUI
 
-extension UINavigationController: UINavigationControllerDelegate {
+extension UINavigationController {
     // MARK: Lifecycle
     open override func viewDidLoad() {
         super.viewDidLoad()
         applyStyle()
         delegate = self
+        setNeedsStatusBarAppearanceUpdate()
     }
     
     // MARK: Privaye methods
@@ -30,8 +31,9 @@ extension UINavigationController: UINavigationControllerDelegate {
         UINavigationBar.appearance().scrollEdgeAppearance = appearance
         UINavigationBar.appearance().tintColor = .adaptativeWhite
     }
-    
-    // MARK: UINavigationControllerDelegate methods
+}
+
+extension UINavigationController: UINavigationControllerDelegate {
     public func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool) {
         let item = UIBarButtonItem(title: "  ", style: .plain, target: nil, action: nil)
         viewController.navigationItem.backBarButtonItem = item

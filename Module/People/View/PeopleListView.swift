@@ -18,7 +18,6 @@ struct PeopleListView: View {
                     ForEach(viewModel.peopleList) { people in
                         NavigationLink(destination: PeopleDetailView(people: people)) {
                             PeopleCell(name: people.name, homeworld: people.homeworld)
-                                .frame(height: 69)
                                 .transition(.move(edge: .top))
                         }
                     }
@@ -75,12 +74,13 @@ struct PeopleCell: View {
             Divider()
                 .padding(.leading, 16)
         }
+        .frame(height: 69)
     }
 }
 
 struct PeopleListView_Previews: PreviewProvider {
     static var previews: some View {
         PeopleListView()
-            .environment(\.locale, Locale(identifier: "en"))
+            
     }
 }

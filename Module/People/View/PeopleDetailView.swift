@@ -26,7 +26,6 @@ struct PeopleDetailView: View {
                     
                     ForEach(people.vehicles) {
                         PeopleVehicleCell(value: $0.name)
-                            .frame(height: 49)
                     }
                 }
             }
@@ -83,6 +82,7 @@ struct PeopleVehicleCell: View {
             Divider()
                 .padding(.leading, 16)
         }
+        .frame(height: 49)
     }
 }
 
