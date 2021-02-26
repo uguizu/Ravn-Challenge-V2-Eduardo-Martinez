@@ -14,6 +14,7 @@ Mobile Application that shows a list of the characters in the universe of StarWa
 - Build entirely in SwiftUI
 - Uses MVVM architecture
 - Minimun target is iOS 14.0
+- Dark mode is fully supported
 
 ## Dependencies
 
