@@ -62,7 +62,7 @@ class PeopleListViewModel: ObservableObject {
         
         resultList
             .failures()
-            .map { _ in false }
+            .map { _ in true }
             .assign(to: \.error, on: self, ownership: .weak)
             .store(in: &cancellables)
     }
