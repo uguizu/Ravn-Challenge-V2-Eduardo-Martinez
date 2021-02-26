@@ -1,0 +1,778 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 52;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5610D1A425E5E7780093BCA4 /* Apollo in Frameworks */ = {isa = PBXBuildFile; productRef = 5610D1A325E5E7780093BCA4 /* Apollo */; };
+		5610D1B125E5EBA00093BCA4 /* PeopleListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5610D1B025E5EBA00093BCA4 /* PeopleListView.swift */; };
+		5610D1BB25E5F3670093BCA4 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5610D1BA25E5F3670093BCA4 /* Colors.xcassets */; };
+		5610D1BF25E5F3EC0093BCA4 /* Image+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5610D1BE25E5F3EC0093BCA4 /* Image+Extensions.swift */; };
+		5610D1C525E5F7A10093BCA4 /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5610D1C425E5F7A10093BCA4 /* Color+Extensions.swift */; };
+		5610D1C925E5FC7B0093BCA4 /* PeopleDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5610D1C825E5FC7B0093BCA4 /* PeopleDetailView.swift */; };
+		5675E9C825E5E2C6004FC8EF /* Ravn_Challenge_V2App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5675E9B525E5E2C5004FC8EF /* Ravn_Challenge_V2App.swift */; };
+		5675E9CC25E5E2C6004FC8EF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5675E9B725E5E2C6004FC8EF /* Assets.xcassets */; };
+		5695E35325E731CC0089D08D /* Font+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5695E35225E731CC0089D08D /* Font+Extensions.swift */; };
+		5695E35C25E735220089D08D /* HeaderTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5695E35B25E735220089D08D /* HeaderTextView.swift */; };
+		5695E35F25E736220089D08D /* ParagraphTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5695E35E25E736220089D08D /* ParagraphTextView.swift */; };
+		5695E36225E73E3E0089D08D /* AllPeople.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 5695E36125E73E3E0089D08D /* AllPeople.graphql */; };
+		5695E37525E745930089D08D /* schema.json in Resources */ = {isa = PBXBuildFile; fileRef = 5695E37425E745920089D08D /* schema.json */; };
+		5695E37C25E746B90089D08D /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5695E37B25E746B90089D08D /* API.swift */; };
+		5695E38525E7492C0089D08D /* PeopleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5695E38425E7492C0089D08D /* PeopleService.swift */; };
+		5695E38825E74A280089D08D /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5695E38725E74A280089D08D /* NetworkClient.swift */; };
+		5695E38E25E74F180089D08D /* PeopleListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5695E38D25E74F180089D08D /* PeopleListViewModel.swift */; };
+		5695E39225E751B40089D08D /* Publisher+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5695E39125E751B40089D08D /* Publisher+Helper.swift */; };
+		5695E39625E752C80089D08D /* CombineExt in Frameworks */ = {isa = PBXBuildFile; productRef = 5695E39525E752C80089D08D /* CombineExt */; };
+		5695E39D25E757800089D08D /* People.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5695E39C25E757800089D08D /* People.swift */; };
+		5695E3AA25E75ED70089D08D /* Vehicle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5695E3A925E75ED70089D08D /* Vehicle.swift */; };
+		5695E3B425E7623C0089D08D /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5695E3B325E7623C0089D08D /* LoadingView.swift */; };
+		5695E3BE25E76D8A0089D08D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5695E3C025E76D8A0089D08D /* Localizable.strings */; };
+		5695E3C725E76EDE0089D08D /* Translations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5695E3C625E76EDE0089D08D /* Translations.swift */; };
+		56B8C0FD25E8714800360043 /* NavigationViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B8C0FC25E8714800360043 /* NavigationViewController+Extensions.swift */; };
+		56B8C10025E87C1900360043 /* NetworkConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B8C0FF25E87C1900360043 /* NetworkConfiguration.swift */; };
+		56B8C11825E8871700360043 /* PeopleListViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B8C11725E8871700360043 /* PeopleListViewModelTest.swift */; };
+		56B8C11F25E88A2B00360043 /* PeopleServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B8C11E25E88A2B00360043 /* PeopleServiceMock.swift */; };
+		56B8C13125E88C3600360043 /* PageInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B8C12725E88BF900360043 /* PageInformation.swift */; };
+		56B8C13825E88C9E00360043 /* NetworkResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B8C13425E88C7D00360043 /* NetworkResponse.swift */; };
+		56B8C15125E89BD700360043 /* PeopleServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B8C15025E89BD700360043 /* PeopleServiceTest.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		56B8C10D25E8843F00360043 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5675E9B025E5E2C5004FC8EF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5675E9BB25E5E2C6004FC8EF;
+			remoteInfo = "Ravn-Challenge-V2 (iOS)";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		5610D1B025E5EBA00093BCA4 /* PeopleListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleListView.swift; sourceTree = "<group>"; };
+		5610D1BA25E5F3670093BCA4 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		5610D1BE25E5F3EC0093BCA4 /* Image+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+Extensions.swift"; sourceTree = "<group>"; };
+		5610D1C425E5F7A10093BCA4 /* Color+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
+		5610D1C825E5FC7B0093BCA4 /* PeopleDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleDetailView.swift; sourceTree = "<group>"; };
+		5675E9B525E5E2C5004FC8EF /* Ravn_Challenge_V2App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ravn_Challenge_V2App.swift; sourceTree = "<group>"; };
+		5675E9B725E5E2C6004FC8EF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5675E9BC25E5E2C6004FC8EF /* Ravn-Challenge-V2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Ravn-Challenge-V2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5675E9BF25E5E2C6004FC8EF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5695E35225E731CC0089D08D /* Font+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+Extensions.swift"; sourceTree = "<group>"; };
+		5695E35B25E735220089D08D /* HeaderTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderTextView.swift; sourceTree = "<group>"; };
+		5695E35E25E736220089D08D /* ParagraphTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParagraphTextView.swift; sourceTree = "<group>"; };
+		5695E36125E73E3E0089D08D /* AllPeople.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = AllPeople.graphql; sourceTree = "<group>"; };
+		5695E37425E745920089D08D /* schema.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = schema.json; sourceTree = "<group>"; };
+		5695E37B25E746B90089D08D /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = SOURCE_ROOT; };
+		5695E38425E7492C0089D08D /* PeopleService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleService.swift; sourceTree = "<group>"; };
+		5695E38725E74A280089D08D /* NetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
+		5695E38D25E74F180089D08D /* PeopleListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleListViewModel.swift; sourceTree = "<group>"; };
+		5695E39125E751B40089D08D /* Publisher+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Publisher+Helper.swift"; sourceTree = "<group>"; };
+		5695E39C25E757800089D08D /* People.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = People.swift; sourceTree = "<group>"; };
+		5695E3A925E75ED70089D08D /* Vehicle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vehicle.swift; sourceTree = "<group>"; };
+		5695E3B325E7623C0089D08D /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		5695E3BF25E76D8A0089D08D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		5695E3C625E76EDE0089D08D /* Translations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Translations.swift; sourceTree = "<group>"; };
+		56B8C0FC25E8714800360043 /* NavigationViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NavigationViewController+Extensions.swift"; sourceTree = "<group>"; };
+		56B8C0FF25E87C1900360043 /* NetworkConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConfiguration.swift; sourceTree = "<group>"; };
+		56B8C10825E8843F00360043 /* Ravn-Challenge-V2Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Ravn-Challenge-V2Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		56B8C10C25E8843F00360043 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		56B8C11725E8871700360043 /* PeopleListViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleListViewModelTest.swift; sourceTree = "<group>"; };
+		56B8C11E25E88A2B00360043 /* PeopleServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleServiceMock.swift; sourceTree = "<group>"; };
+		56B8C12725E88BF900360043 /* PageInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageInformation.swift; sourceTree = "<group>"; };
+		56B8C13425E88C7D00360043 /* NetworkResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResponse.swift; sourceTree = "<group>"; };
+		56B8C15025E89BD700360043 /* PeopleServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleServiceTest.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5675E9B925E5E2C6004FC8EF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5695E39625E752C80089D08D /* CombineExt in Frameworks */,
+				5610D1A425E5E7780093BCA4 /* Apollo in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		56B8C10525E8843F00360043 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5610D1AB25E5E9930093BCA4 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				5695E37B25E746B90089D08D /* API.swift */,
+				5675E9BF25E5E2C6004FC8EF /* Info.plist */,
+				5675E9B525E5E2C5004FC8EF /* Ravn_Challenge_V2App.swift */,
+				5675E9B725E5E2C6004FC8EF /* Assets.xcassets */,
+				5610D1BA25E5F3670093BCA4 /* Colors.xcassets */,
+				5695E3C025E76D8A0089D08D /* Localizable.strings */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		5610D1AC25E5E9A60093BCA4 /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				5610D1AE25E5EB660093BCA4 /* People */,
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
+		5610D1AE25E5EB660093BCA4 /* People */ = {
+			isa = PBXGroup;
+			children = (
+				5695E38C25E74F060089D08D /* ViewModel */,
+				5610D1AF25E5EB8D0093BCA4 /* View */,
+			);
+			path = People;
+			sourceTree = "<group>";
+		};
+		5610D1AF25E5EB8D0093BCA4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5610D1B025E5EBA00093BCA4 /* PeopleListView.swift */,
+				5610D1C825E5FC7B0093BCA4 /* PeopleDetailView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5610D1B425E5F2770093BCA4 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				5695E3C525E76ECF0089D08D /* Utilites */,
+				5695E35525E734E60089D08D /* Design System */,
+				5610D1C125E5F3F00093BCA4 /* Extensions */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		5610D1C125E5F3F00093BCA4 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				5610D1BE25E5F3EC0093BCA4 /* Image+Extensions.swift */,
+				5610D1C425E5F7A10093BCA4 /* Color+Extensions.swift */,
+				5695E35225E731CC0089D08D /* Font+Extensions.swift */,
+				5695E39125E751B40089D08D /* Publisher+Helper.swift */,
+				56B8C0FC25E8714800360043 /* NavigationViewController+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		5675E9AF25E5E2C5004FC8EF = {
+			isa = PBXGroup;
+			children = (
+				5695E39925E756DC0089D08D /* Core */,
+				5610D1B425E5F2770093BCA4 /* Shared */,
+				5610D1AC25E5E9A60093BCA4 /* Module */,
+				5610D1AB25E5E9930093BCA4 /* Resources */,
+				5695E36E25E740AF0089D08D /* ApolloResources */,
+				56B8C10925E8843F00360043 /* Ravn-Challenge-V2Tests */,
+				5675E9BD25E5E2C6004FC8EF /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		5675E9BD25E5E2C6004FC8EF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5675E9BC25E5E2C6004FC8EF /* Ravn-Challenge-V2.app */,
+				56B8C10825E8843F00360043 /* Ravn-Challenge-V2Tests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5695E35525E734E60089D08D /* Design System */ = {
+			isa = PBXGroup;
+			children = (
+				5695E35B25E735220089D08D /* HeaderTextView.swift */,
+				5695E35E25E736220089D08D /* ParagraphTextView.swift */,
+				5695E3B325E7623C0089D08D /* LoadingView.swift */,
+			);
+			path = "Design System";
+			sourceTree = "<group>";
+		};
+		5695E36E25E740AF0089D08D /* ApolloResources */ = {
+			isa = PBXGroup;
+			children = (
+				5695E37425E745920089D08D /* schema.json */,
+				5695E36125E73E3E0089D08D /* AllPeople.graphql */,
+			);
+			path = ApolloResources;
+			sourceTree = "<group>";
+		};
+		5695E37F25E747220089D08D /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				5695E38725E74A280089D08D /* NetworkClient.swift */,
+				56B8C0FF25E87C1900360043 /* NetworkConfiguration.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		5695E38C25E74F060089D08D /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				5695E38D25E74F180089D08D /* PeopleListViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		5695E39925E756DC0089D08D /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				5695E39A25E756F70089D08D /* Model */,
+				5695E37F25E747220089D08D /* Network */,
+				5695E39B25E7571D0089D08D /* Services */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		5695E39A25E756F70089D08D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				56B8C13425E88C7D00360043 /* NetworkResponse.swift */,
+				56B8C12725E88BF900360043 /* PageInformation.swift */,
+				5695E39C25E757800089D08D /* People.swift */,
+				5695E3A925E75ED70089D08D /* Vehicle.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5695E39B25E7571D0089D08D /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				5695E38425E7492C0089D08D /* PeopleService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		5695E3C525E76ECF0089D08D /* Utilites */ = {
+			isa = PBXGroup;
+			children = (
+				5695E3C625E76EDE0089D08D /* Translations.swift */,
+			);
+			path = Utilites;
+			sourceTree = "<group>";
+		};
+		56B8C10925E8843F00360043 /* Ravn-Challenge-V2Tests */ = {
+			isa = PBXGroup;
+			children = (
+				56B8C11D25E88A0A00360043 /* Mocks */,
+				56B8C11425E8865B00360043 /* Module */,
+				56B8C14125E8994600360043 /* Services */,
+				56B8C10C25E8843F00360043 /* Info.plist */,
+			);
+			path = "Ravn-Challenge-V2Tests";
+			sourceTree = "<group>";
+		};
+		56B8C11425E8865B00360043 /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				56B8C11525E8866500360043 /* People */,
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
+		56B8C11525E8866500360043 /* People */ = {
+			isa = PBXGroup;
+			children = (
+				56B8C11625E886D000360043 /* ViewModel */,
+			);
+			path = People;
+			sourceTree = "<group>";
+		};
+		56B8C11625E886D000360043 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				56B8C11725E8871700360043 /* PeopleListViewModelTest.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		56B8C11D25E88A0A00360043 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				56B8C12625E88BAD00360043 /* Services */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		56B8C12625E88BAD00360043 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				56B8C11E25E88A2B00360043 /* PeopleServiceMock.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		56B8C14125E8994600360043 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				56B8C15025E89BD700360043 /* PeopleServiceTest.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5675E9BB25E5E2C6004FC8EF /* Ravn-Challenge-V2 (iOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5675E9D025E5E2C6004FC8EF /* Build configuration list for PBXNativeTarget "Ravn-Challenge-V2 (iOS)" */;
+			buildPhases = (
+				5695E36425E73F580089D08D /* Apollo Generation */,
+				5675E9B825E5E2C6004FC8EF /* Sources */,
+				5675E9B925E5E2C6004FC8EF /* Frameworks */,
+				5675E9BA25E5E2C6004FC8EF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Ravn-Challenge-V2 (iOS)";
+			packageProductDependencies = (
+				5610D1A325E5E7780093BCA4 /* Apollo */,
+				5695E39525E752C80089D08D /* CombineExt */,
+			);
+			productName = "Ravn-Challenge-V2 (iOS)";
+			productReference = 5675E9BC25E5E2C6004FC8EF /* Ravn-Challenge-V2.app */;
+			productType = "com.apple.product-type.application";
+		};
+		56B8C10725E8843F00360043 /* Ravn-Challenge-V2Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 56B8C10F25E8843F00360043 /* Build configuration list for PBXNativeTarget "Ravn-Challenge-V2Tests" */;
+			buildPhases = (
+				56B8C10425E8843F00360043 /* Sources */,
+				56B8C10525E8843F00360043 /* Frameworks */,
+				56B8C10625E8843F00360043 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				56B8C10E25E8843F00360043 /* PBXTargetDependency */,
+			);
+			name = "Ravn-Challenge-V2Tests";
+			productName = "Ravn-Challenge-V2Tests";
+			productReference = 56B8C10825E8843F00360043 /* Ravn-Challenge-V2Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5675E9B025E5E2C5004FC8EF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1240;
+				LastUpgradeCheck = 1240;
+				TargetAttributes = {
+					5675E9BB25E5E2C6004FC8EF = {
+						CreatedOnToolsVersion = 12.4;
+					};
+					56B8C10725E8843F00360043 = {
+						CreatedOnToolsVersion = 12.4;
+						TestTargetID = 5675E9BB25E5E2C6004FC8EF;
+					};
+				};
+			};
+			buildConfigurationList = 5675E9B325E5E2C5004FC8EF /* Build configuration list for PBXProject "Ravn-Challenge-V2" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5675E9AF25E5E2C5004FC8EF;
+			packageReferences = (
+				5610D1A225E5E7780093BCA4 /* XCRemoteSwiftPackageReference "apollo-ios" */,
+				5695E39425E752C80089D08D /* XCRemoteSwiftPackageReference "CombineExt" */,
+			);
+			productRefGroup = 5675E9BD25E5E2C6004FC8EF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5675E9BB25E5E2C6004FC8EF /* Ravn-Challenge-V2 (iOS) */,
+				56B8C10725E8843F00360043 /* Ravn-Challenge-V2Tests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5675E9BA25E5E2C6004FC8EF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5695E37525E745930089D08D /* schema.json in Resources */,
+				5675E9CC25E5E2C6004FC8EF /* Assets.xcassets in Resources */,
+				5695E3BE25E76D8A0089D08D /* Localizable.strings in Resources */,
+				5695E36225E73E3E0089D08D /* AllPeople.graphql in Resources */,
+				5610D1BB25E5F3670093BCA4 /* Colors.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		56B8C10625E8843F00360043 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5695E36425E73F580089D08D /* Apollo Generation */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Apollo Generation";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n# Go to the build root and search up the chain to find the Derived Data Path where the source packages are checked out.\nDERIVED_DATA_CANDIDATE=\"${BUILD_ROOT}\"\n\nwhile ! [ -d \"${DERIVED_DATA_CANDIDATE}/SourcePackages\" ]; do\n  if [ \"${DERIVED_DATA_CANDIDATE}\" = / ]; then\n    echo >&2 \"error: Unable to locate SourcePackages directory from BUILD_ROOT: '${BUILD_ROOT}'\"\n    exit 1\n  fi\n\n  DERIVED_DATA_CANDIDATE=\"$(dirname \"${DERIVED_DATA_CANDIDATE}\")\"\ndone\n\n# Grab a reference to the directory where scripts are checked out\nSCRIPT_PATH=\"${DERIVED_DATA_CANDIDATE}/SourcePackages/checkouts/apollo-ios/scripts\"\n\nif [ -z \"${SCRIPT_PATH}\" ]; then\n    echo >&2 \"error: Couldn't find the CLI script in your checked out SPM packages; make sure to add the framework to your project.\"\n    exit 1\nfi\n\ncd \"${SRCROOT}/${TARGET_NAME}\"\n\"${SCRIPT_PATH}\"/run-bundled-codegen.sh codegen:generate --target=swift --includes=./**/*.graphql --localSchemaFile=\"./ApolloResources/schema.json\" API.swift\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5675E9B825E5E2C6004FC8EF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5695E35F25E736220089D08D /* ParagraphTextView.swift in Sources */,
+				5695E39225E751B40089D08D /* Publisher+Helper.swift in Sources */,
+				56B8C13825E88C9E00360043 /* NetworkResponse.swift in Sources */,
+				5695E38E25E74F180089D08D /* PeopleListViewModel.swift in Sources */,
+				56B8C13125E88C3600360043 /* PageInformation.swift in Sources */,
+				5695E38525E7492C0089D08D /* PeopleService.swift in Sources */,
+				5695E3B425E7623C0089D08D /* LoadingView.swift in Sources */,
+				5695E35325E731CC0089D08D /* Font+Extensions.swift in Sources */,
+				5610D1C525E5F7A10093BCA4 /* Color+Extensions.swift in Sources */,
+				5695E39D25E757800089D08D /* People.swift in Sources */,
+				5610D1B125E5EBA00093BCA4 /* PeopleListView.swift in Sources */,
+				5695E3AA25E75ED70089D08D /* Vehicle.swift in Sources */,
+				5695E38825E74A280089D08D /* NetworkClient.swift in Sources */,
+				5675E9C825E5E2C6004FC8EF /* Ravn_Challenge_V2App.swift in Sources */,
+				5695E3C725E76EDE0089D08D /* Translations.swift in Sources */,
+				56B8C0FD25E8714800360043 /* NavigationViewController+Extensions.swift in Sources */,
+				56B8C10025E87C1900360043 /* NetworkConfiguration.swift in Sources */,
+				5610D1BF25E5F3EC0093BCA4 /* Image+Extensions.swift in Sources */,
+				5695E35C25E735220089D08D /* HeaderTextView.swift in Sources */,
+				5695E37C25E746B90089D08D /* API.swift in Sources */,
+				5610D1C925E5FC7B0093BCA4 /* PeopleDetailView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		56B8C10425E8843F00360043 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				56B8C11825E8871700360043 /* PeopleListViewModelTest.swift in Sources */,
+				56B8C15125E89BD700360043 /* PeopleServiceTest.swift in Sources */,
+				56B8C11F25E88A2B00360043 /* PeopleServiceMock.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		56B8C10E25E8843F00360043 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5675E9BB25E5E2C6004FC8EF /* Ravn-Challenge-V2 (iOS) */;
+			targetProxy = 56B8C10D25E8843F00360043 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		5695E3C025E76D8A0089D08D /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5695E3BF25E76D8A0089D08D /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5675E9CE25E5E2C6004FC8EF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		5675E9CF25E5E2C6004FC8EF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		5675E9D125E5E2C6004FC8EF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 24WD6JJ5P2;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = Resources/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.emartinez.Ravn-Challenge-V2";
+				PRODUCT_NAME = "Ravn-Challenge-V2";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		5675E9D225E5E2C6004FC8EF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 24WD6JJ5P2;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = Resources/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.emartinez.Ravn-Challenge-V2";
+				PRODUCT_NAME = "Ravn-Challenge-V2";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		56B8C11025E8843F00360043 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 24WD6JJ5P2;
+				INFOPLIST_FILE = "Ravn-Challenge-V2Tests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.emartinez.Ravn-Challenge-V2Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Ravn-Challenge-V2.app/Ravn-Challenge-V2";
+			};
+			name = Debug;
+		};
+		56B8C11125E8843F00360043 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 24WD6JJ5P2;
+				INFOPLIST_FILE = "Ravn-Challenge-V2Tests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.emartinez.Ravn-Challenge-V2Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Ravn-Challenge-V2.app/Ravn-Challenge-V2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5675E9B325E5E2C5004FC8EF /* Build configuration list for PBXProject "Ravn-Challenge-V2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5675E9CE25E5E2C6004FC8EF /* Debug */,
+				5675E9CF25E5E2C6004FC8EF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5675E9D025E5E2C6004FC8EF /* Build configuration list for PBXNativeTarget "Ravn-Challenge-V2 (iOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5675E9D125E5E2C6004FC8EF /* Debug */,
+				5675E9D225E5E2C6004FC8EF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		56B8C10F25E8843F00360043 /* Build configuration list for PBXNativeTarget "Ravn-Challenge-V2Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				56B8C11025E8843F00360043 /* Debug */,
+				56B8C11125E8843F00360043 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		5610D1A225E5E7780093BCA4 /* XCRemoteSwiftPackageReference "apollo-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apollographql/apollo-ios.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.41.0;
+			};
+		};
+		5695E39425E752C80089D08D /* XCRemoteSwiftPackageReference "CombineExt" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/CombineCommunity/CombineExt.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.2.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		5610D1A325E5E7780093BCA4 /* Apollo */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5610D1A225E5E7780093BCA4 /* XCRemoteSwiftPackageReference "apollo-ios" */;
+			productName = Apollo;
+		};
+		5695E39525E752C80089D08D /* CombineExt */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5695E39425E752C80089D08D /* XCRemoteSwiftPackageReference "CombineExt" */;
+			productName = CombineExt;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 5675E9B025E5E2C5004FC8EF /* Project object */;
+}
