@@ -13,7 +13,7 @@ class PeopleListViewModel: ObservableObject {
     // Binding
     @Published var loading = false
     @Published var peopleList: [People] = []
-    @Published var pageInformation: AllPeopleQuery.Data.AllPerson.PageInfo?
+    @Published var pageInformation: PageInformation?
     
     // Input
     let requestNextPage = PassthroughSubject<Void, Never>()
@@ -27,9 +27,9 @@ class PeopleListViewModel: ObservableObject {
     }
     
     private var cancellables = Set<AnyCancellable>()
-    private let service: PeopleNetworkServiceType
+    private let service: PeopleServiceType
     
-    init(service: PeopleNetworkServiceType = PeopleNetworkService()) {
+    init(service: PeopleServiceType = PeopleService()) {
         self.service = service
         setupBindings()
     }
@@ -38,7 +38,7 @@ class PeopleListViewModel: ObservableObject {
         let resultList = requestNextPage
             .delay(for: .seconds(1), scheduler: RunLoop.main, options: .none)
             .withLatestFrom($pageInformation)
-            .map { $0?.endCursor }
+            .map { $0?.cursor }
             .handleReceiveValue { [weak self] _ in self?.loading = true }
             .flatMapLatest { [service] cursor in
                 service
@@ -49,13 +49,9 @@ class PeopleListViewModel: ObservableObject {
             .share()
            
         resultList.values()
-            .map {
-                ($0?.people?.compactMap { $0 }.map { People(wrappedValue: $0) },
-                 $0?.pageInfo)
-            }
             .sink { [weak self] in
-                self?.peopleList.append(contentsOf: $0 ?? [])
-                self?.pageInformation = $1
+                self?.peopleList.append(contentsOf: $0.value)
+                self?.pageInformation = $0.pageInformation
                 self?.error = false
             }
             .store(in: &cancellables)
